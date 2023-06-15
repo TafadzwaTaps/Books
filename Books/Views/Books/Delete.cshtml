@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model Book
+
+<h2>Book Deleted</h2>
+<p>Title: @Model.Title</p>
+<p>Author: @Model.Author</p>
+<p>Number of Pages: @Model.NumberOfPages</p>
+<p>Categories: @string.Join(", ", Model.Categories)</p>
+<p>Book has been deleted successfully.</p>
+@Html.ActionLink("Back to Book List", "List", "Book", null, new { @class = "btn btn-primary" })

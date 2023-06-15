@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "_Layout";
+    @Html.ActionLink("Add Book", "Add", "Book", null, new { @class = "btn btn-primary" })
+}
+
+@foreach (var book in Model)
+{
+    <div>
+        <span>@book.Title</span>
+        <span>@book.Author</span>
+        @Html.ActionLink("Delete", "Delete", "Book", new { id = book.Id }, new { @class = "btn btn-danger" })
+    </div>
+}
+
+@foreach (var book in Model)
+{
+    <div>
+        <span>@book.Title</span>
+        <span>@book.Author</span>
+        @Html.ActionLink("Delete", "Delete", "Book", new { id = book.Id }, new { @class = "btn btn-danger" })
+        @Html.ActionLink("Update", "Update", "Book", new { id = book.Id }, new { @class = "btn btn-primary" })
+    </div>
+}

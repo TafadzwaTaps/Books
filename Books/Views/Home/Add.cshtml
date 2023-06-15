@@ -1,0 +1,25 @@
+﻿@model Books.Models.Book
+
+<h2>Add Book</h2>
+
+@using (Html.BeginForm("Add", "Book", FormMethod.Post))
+{
+    <div>
+        <label>Title:</label>
+        @Html.TextBoxFor(m => m.Title)
+    </div>
+    <div>
+        <label>Author:</label>
+        @Html.TextBoxFor(m => m.Author)
+    </div>
+    <div>
+        <label>Number of Pages:</label>
+        @Html.TextBoxFor(m => m.NumberOfPages)
+    </div>
+    <div>
+        <label>Categories:</label>
+        @Html.TextBoxFor(m => m.Categories)
+    </div>
+    <input type="submit" value="Add Book" />
+}
+

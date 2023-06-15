@@ -1,0 +1,39 @@
+﻿@model EditBookViewModel
+
+@{
+    ViewBag.Title = "Edit Book";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Save", "Book"))
+{
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title)
+        @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Title)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Author)
+        @Html.TextBoxFor(model => model.Author, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Author)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NumberOfPages)
+        @Html.TextBoxFor(model => model.NumberOfPages, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.NumberOfPages)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Categories)
+        @Html.TextBoxFor(model => model.Categories, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Categories)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="@Url.Action("List")" class="btn btn-default">Cancel</a>
+}

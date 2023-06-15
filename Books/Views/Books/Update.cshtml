@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model Book
+
+@using (Html.BeginForm("Update", "Book", FormMethod.Post))
+{
+    <div>
+        <label>Title:</label>
+        @Html.TextBoxFor(m => m.Title)
+    </div>
+    <div>
+        <label>Author:</label>
+        @Html.TextBoxFor(m => m.Author)
+    </div>
+    <div>
+        <label>Number of Pages:</label>
+        @Html.TextBoxFor(m => m.NumberOfPages)
+    </div>
+    <div>
+        <label>Categories:</label>
+        @Html.TextBoxFor(m => m.Categories)
+    </div>
+    <input type="submit" value="Save" />
+    @Html.ActionLink("Cancel", "List", "Book", null, new { @class = "btn btn-secondary" })
+}
